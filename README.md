@@ -70,7 +70,7 @@ Model, kategorik çapraz entropi kaybı fonksiyonu ve Adam optimizasyon algoritm
 
 ### 9. Model Eğitimi
 
-Model, yukarıda bahsedilen veri seti ve sınıf ağırlıkları dikkate alınarak eğitilmiştir. Eğitim sürecinde, erken durdurma (early stopping) yöntemi kullanılarak modelin fazla eğitilmesi (overfitting) engellenmiştir. Model 10 epoch boyunca eğitilmiş ve her epoch'ta eğitim ve doğrulama verisi üzerindeki performans takip edilmiştir.
+Model, yukarıda bahsedilen veri seti ve sınıf ağırlıkları dikkate alınarak eğitilmiştir. Eğitim sürecinde, erken durdurma (early stopping) yöntemi kullanılarak modelin fazla eğitilmesi (overfitting) engellenmiştir. Model 30 epoch boyunca eğitilmiş ve her epoch'ta eğitim ve doğrulama verisi üzerindeki performans takip edilmiştir.
 
 Sonuçlar grafikler ile sunulmuştur:
 - **Kayıp fonksiyonu**: Eğitim ve doğrulama kayıpları epoch bazında çizilmiştir.
