@@ -99,10 +99,10 @@ Performansı artırmak için iki önemli değişiklik yapıldı: Yoğun katmanda
 - **Dropout Oranı**: 0.2
 
 Yapılan bu hiperparametre değişiklikleri sonucunda modelin performansında iyileşme gözlendi. Yeni hiperparametreler ile modelin eğitim ve doğrulama sonuçları aşağıdaki gibidir:
-- **Son Eğitim Kaybı**: 0.9637
-- **Son Doğrulama Kaybı**: 0.8907
-- **Son Eğitim Doğruluğu**: 64.61%
-- **Son Doğrulama Doğruluğu**: 67.78%
+- **Son Eğitim Kaybı**: 0.5871
+- **Son Doğrulama Kaybı**: 0.4389
+- **Son Eğitim Doğruluğu**: 78.16%
+- **Son Doğrulama Doğruluğu**: 84.74%
 
 Eğitim kaybındaki azalma ve doğrulama kaybındaki benzer orandaki iyileşme, modelin overfitting yapmadığını ve daha genel bir performans elde ettiğini işaret etmektedir.
 
