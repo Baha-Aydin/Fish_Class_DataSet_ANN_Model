@@ -19,6 +19,7 @@ Projenin ilk adımında, Python'da kullanılan çeşitli kütüphaneler projeye 
 
 Ayrıca, projedeki uyarı mesajlarının çıkmasını engellemek için `warnings.filterwarnings('ignore')` ifadesi ile uyarılar kapatılmıştır.
 
+
 ### 2. Veri Hazırlığı
 
 Bu adımda, proje için kullanılan balık görüntüleri yüklenmiş ve işlenmeye hazır hale getirilmiştir.
@@ -26,9 +27,11 @@ Bu adımda, proje için kullanılan balık görüntüleri yüklenmiş ve işlenm
 - **Etiketleme**: Görüntülerin etiketleri, dosya yolunun bir üst klasörü olarak belirlenmiştir. Bu, her bir balık görüntüsünün hangi türe ait olduğunu belirlememizi sağlar. `os.path.split()` fonksiyonu ile her görüntünün dosya yolundan balık türü etiketleri çıkarılmıştır.
 - **DataFrame Oluşturma**: Dosya yolları ve etiketler, “pandas” kullanılarak bir DataFrame'e dönüştürülmüştür. Bu DataFrame, veri setinin temelini oluşturur ve her bir görüntüyle ilgili hem dosya yolunu hem de etiket bilgisini barındırır.
 
+
 ### 3. Veri Temizleme ve Karıştırma
 
 Veri setinde bazı görüntülerin etiketleri "GT" ile bitmektedir. Bu görüntüler sınıflandırma esnasında problem yaşanmaması için çıkarılmıştır. Ayrıca, veri setinin rastgele karıştırılması sağlanmıştır. Bu, eğitim ve test aşamalarında veri setindeki sıralamadan kaynaklanabilecek hataları önlemeye yardımcı olunmasını sağlamaktadır.
+
 
 ### 4. Verilerin Dağılımı ve Görselleştirme
 
@@ -36,9 +39,11 @@ Veri setindeki balık türlerinin dağılımı analiz edilmiştir. Her bir balı
 - **Balık türlerine göre görüntü sayıları**: Her balık türünün veri setinde ne kadar temsil edildiği belirlendi.
 - **Yüzdesel dağılım(Frequency)**: Her türün veri setindeki toplam görüntü sayısına oranı hesaplandı ve yüzdelik dilimler ile sunuldu.
 
+
 ### 5. Görüntülerin Piksel Dağılımı
 
 Veri setindeki görüntüler üzerinde yapılan incelemeler sonucunda, görüntülerin piksel değerlerinin dağılımı da analiz edildi. İlk 10 görüntünün piksel yoğunluğu incelendi ve bu piksel değerlerinin dağılımı bir histogram ile görselleştirildi. Bu adım, görüntülerin ne kadar iyi normalize edildiğini ve belirli bir örüntü olup olmadığını anlamamıza yardımcı olmaktadır.
+
 
 ### 6. Veri Setinin Bölünmesi
 
@@ -49,6 +54,7 @@ Veri seti, modelin eğitim ve test süreçlerinde kullanmak üzere üç ana böl
 
 Verilerin bu şekilde bölünmesi, modelin genelleme kabiliyetini artırmayı ve aşırı öğrenmeyi önlemeyi amaçlamaktadır.
 
+
 ### 7. Veri Artırma (Data Augmentation)
 
 Eğitim setindeki görüntüler üzerinde çeşitli veri artırma işlemleri uygulanmıştır. Veri artırma teknikleri, sınıflar arası dengesizlikleri azaltmak ve modelin farklı senaryolarla başa çıkabilme kabiliyetini artırmak amacıyla kullanılmıştır. Kullanılan artırma yöntemleri şunlardır:
@@ -56,6 +62,7 @@ Eğitim setindeki görüntüler üzerinde çeşitli veri artırma işlemleri uyg
 - **Zoom**: Görüntüler rastgele %20 oranında büyütülmüş veya küçültülmüştür.
 - **Yatay çevirme**: Görüntüler yatay olarak çevrilmiştir.
 - **Genişlik ve yükseklik kaydırma**: Görüntüler rastgele olarak yatay ve dikey eksende kaydırılmıştır.
+
 
 ### 8. One-Hot Encoded Etiketlerinin Görselleştirilmesi
 
@@ -74,6 +81,7 @@ Bu projede kullanılan sinir ağı modeli, tam bağlı katmanlardan oluşan bir 
 - **Çıkış katmanı**: Balık türlerinin sayısına (9 sınıf) karşılık gelen softmax aktivasyonlu bir çıkış katmanı kullanılmıştır.
 
 Model, kategorik çapraz entropi kaybı (categorical cross-entropy loss) fonksiyonu ve Adam (Adaptive Moment Estimation (Uyarlanabilir Anlık Tahmin)) optimizasyon algoritması kullanılarak derlenmiştir.
+
 
 ### 10. Model Eğitimi
 
