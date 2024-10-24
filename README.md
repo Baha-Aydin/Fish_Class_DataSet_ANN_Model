@@ -105,7 +105,7 @@ Sonuçlar grafikler ile sunulmuştur:
 
 ### 12. Hiperparametre Optimizasyonu
 
-Hiperparametre optimizasyonu, modelin performansını artırmak için katman sayısı, nöron sayısı, öğrenme oranı ve dropout gibi parametrelerin ayarlanmasını içerir. Yapay sinir ağları (ANN) üzerinde çalışırken, bu parametrelerin doğru bir şekilde optimize edilmesi, modelin hem eğitim hem de doğrulama performansını doğrudan etkiler. Bu projede, başlangıçta kullanılan hiperparametrelerin değiştirilmesi ve bunun sonucunda elde edilen performans değerleri karşılaştırılmaktadır.
+Hiperparametre optimizasyonu, modelin performansını artırmak için katman sayısı, nöron sayısı, öğrenme oranı ve dropout gibi parametrelerin ayarlanmasını içerir. Yapay sinir ağları (ANN) üzerinde çalışırken, bu parametrelerin doğru bir şekilde optimize edilmesi, modelin hem eğitim hem de doğrulama performansını doğrudan etkiler. Bu aşamada, başlangıçta kullanılan hiperparametrelerin değiştirilmesi ve bunun sonucunda elde edilen performans değerleri karşılaştırılmaktadır.
 
 #### Başlangıç Parametreleri:
 - **Yoğun Katman (Dense)**: 128 nöron
