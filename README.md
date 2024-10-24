@@ -131,7 +131,7 @@ Yapılan bu hiperparametre değişiklikleri sonucunda modelin performansında iy
 
 Eğitim kaybındaki azalma ve doğrulama kaybındaki benzer orandaki iyileşme, modelin overfitting yapmadığını ve daha genel bir performans elde ettiğini işaret etmektedir.
 
-### 13. Sonuçlar ve Yorumlar
+### 13. Sonuç
 
 Model, balık türlerinin sınıflandırılmasında başarılı sonuçlar vermiştir. Proje sonunda modelin doğrulama setindeki doğruluğu yüksek, veri kaybı ise düşük bir seviyede kalmış olarak sonuçlandırılmıştır.
 
