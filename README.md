@@ -4,7 +4,7 @@ Bu yazı, balık türlerini sınıflandırmak için kullanılan bir derin öğre
 
 ## Projenin Genel Amacı
 
-Bu proje, çeşitli balık türlerine ait görüntüleri kullanarak, bir yapay sinir ağı modeli (Artificial Neural Network - ANN) ile bu balıkların türlerinin sınıflandırılmasını amaçlamaktadır. Veri setinde farklı balık türlerine ait resimler bulunmakta ve bu resimler üzerinde çeşitli veri işleme ve model eğitim teknikleri uygulanarak bir sınıflandırma modeli geliştirilmiştir.
+Bu proje, çeşitli balık türlerine ait görüntüleri kullanarak, bir yapay sinir ağı modeli (Artificial Neural Network - ANN) ile bu balıkların türlerinin sınıflandırılmasını amaçlamaktadır. Veri setinde farklı balık türlerine ait resimler bulunmakta ve bu resimler üzerinde çeşitli veri işleme, model eğitim teknikleri uygulanarak bir sınıflandırma modeli geliştirilmiştir.
 
 ### 1. Gerekli Kütüphanelerin Yüklenmesi
 
