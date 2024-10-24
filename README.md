@@ -87,10 +87,10 @@ Hiperparametre optimizasyonu, modelin performansını artırmak için katman say
 - **Dropout Oranı**: 0.2
 
 Başlangıç hiperparametreleriyle modelin elde ettiği sonuçlar:
-- **Son Eğitim Kaybı**: 1.042
-- **Son Doğrulama Kaybı**: 1.020
-- **Son Eğitim Doğruluğu**: %61.50
-- **Son Doğrulama Doğruluğu**: %58.20
+- **Son Eğitim Kaybı**: 2.08
+- **Son Doğrulama Kaybı**: 2.08
+- **Son Eğitim Doğruluğu**: 11.70%
+- **Son Doğrulama Doğruluğu**: 12.50%
 
 Performansı artırmak için iki önemli değişiklik yapıldı: Yoğun katmandaki nöron sayısı artırıldı ve dropout oranı korundu.
 
