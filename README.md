@@ -136,7 +136,6 @@ Eğitim kaybındaki azalma ve doğrulama kaybındaki benzer orandaki iyileşme, 
 Model, balık türlerinin sınıflandırılmasında başarılı sonuçlar vermiştir. Proje sonunda modelin doğrulama setindeki doğruluğu yüksek, veri kaybı ise düşük bir seviyede kalmış olarak sonuçlandırılmıştır.
 
 ### 14. Ek
-
 #### Kaggle Erişim Linki
 Kaggle'daki balık sınıflandırma datasetine ve bu veri setiyle ilgili yapılan çalışmaya erişmek için aşağıdaki bağlantıyı kullanabilirsiniz:
 https://www.kaggle.com/code/fehmibahaaydn/fish-classdataset-ann
