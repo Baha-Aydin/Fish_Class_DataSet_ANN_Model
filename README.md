@@ -34,9 +34,7 @@ Veri setinde bazı görüntülerin etiketleri "GT" ile bitmektedir. Bu görünt�
 
 Veri setindeki balık türlerinin dağılımı analiz edilmiştir. Her bir balık türüne ait kaç görüntü bulunduğu sayıldı ve bu sınıfsal dağılım görselleştirildi. Bu adımların amacı, veri setindeki dengesizlikleri belirlemek ve gerektiğinde veri artırma (data augmentation) yöntemlerini uygulamaktır.
 - **Balık türlerine göre görüntü sayıları**: Her balık türünün veri setinde ne kadar temsil edildiği belirlendi.
-- **Yüzdesel dağılım**: Her türün veri setindeki toplam görüntü sayısına oranı hesaplandı ve yüzdelik dilimler ile sunuldu.
-
-Bu dağılım grafikleri, veri setinde bazı balık türlerinin daha fazla görüntü ile temsil edildiğini, bazı türlerin ise az sayıda görüntüye sahip olduğunu gösterdi.
+- **Yüzdesel dağılım(Frequency)**: Her türün veri setindeki toplam görüntü sayısına oranı hesaplandı ve yüzdelik dilimler ile sunuldu.
 
 ### 5. Görüntülerin Piksel Dağılımı
 
@@ -59,16 +57,25 @@ Eğitim setindeki görüntüler üzerinde çeşitli veri artırma işlemleri uyg
 - **Yatay çevirme**: Görüntüler yatay olarak çevrilmiştir.
 - **Genişlik ve yükseklik kaydırma**: Görüntüler rastgele olarak yatay ve dikey eksende kaydırılmıştır.
 
-### 8. Yapay Sinir Ağı (ANN) Modeli
+### 8. One-Hot Encoded Etiketlerinin Görselleştirilmesi
+
+Bu bölümde, görüntü veri setindeki etiketlerin one-hot encoding yöntemiyle dönüştürülmesi ve görselleştirilmesi anlatılmaktadır. `LabelBinarizer` kullanılarak etiketler ikili formata çevrilmiştir.
+
+Eğitim setinden rastgele 10 görüntü seçilmiş ve her birinin karşılık gelen one-hot encoded etiketi ile birlikte gösterilmiştir. Görseller, başlıklarında hangi balık türüne ait oldukları ve one-hot encoded değerleri ile sunulmuştur.
+
+Ayrıca, ilk 10 örneğe ait one-hot encoded etiketler bir ısı haritası (heatmap) ile görselleştirilmiştir. Bu harita, her balık türünün temsilini ve etiketlerin dağılımını net bir şekilde göstermektedir.
+
+
+### 9. Yapay Sinir Ağı (ANN) Modeli
 
 Bu projede kullanılan sinir ağı modeli, tam bağlı katmanlardan oluşan bir Artificial Neural Network (ANN) modelidir. Modelin yapısı aşağıdaki gibidir:
 - **Giriş katmanı**: İlk olarak, görüntülerin piksel değerleri 0 ile 1 arasında ölçeklenmiştir.
 - **Gizli katmanlar**: Modelde iki adet tam bağlı gizli katman bulunmaktadır. Bu katmanlar 512 nöron içermekte ve her biri ReLU aktivasyon fonksiyonunu kullanmaktadır. Ayrıca, aşırı öğrenmeyi (overfitting) önlemek için Dropout uygulanmıştır.
 - **Çıkış katmanı**: Balık türlerinin sayısına (9 sınıf) karşılık gelen softmax aktivasyonlu bir çıkış katmanı kullanılmıştır.
 
-Model, kategorik çapraz entropi kaybı fonksiyonu ve Adam optimizasyon algoritması kullanılarak derlenmiştir.
+Model, kategorik çapraz entropi kaybı (categorical cross-entropy loss) fonksiyonu ve Adam (Adaptive Moment Estimation (Uyarlanabilir Anlık Tahmin)) optimizasyon algoritması kullanılarak derlenmiştir.
 
-### 9. Model Eğitimi
+### 10. Model Eğitimi
 
 Model, yukarıda bahsedilen veri seti ve sınıf ağırlıkları dikkate alınarak eğitilmiştir. Eğitim sürecinde, erken durdurma (early stopping) yöntemi kullanılarak modelin fazla eğitilmesi (overfitting) engellenmiştir. Model 30 epoch boyunca eğitilmiş ve her epoch'ta eğitim ve doğrulama verisi üzerindeki performans takip edilmiştir.
 
@@ -76,9 +83,19 @@ Sonuçlar grafikler ile sunulmuştur:
 - **Kayıp fonksiyonu**: Eğitim ve doğrulama kayıpları epoch bazında çizilmiştir.
 - **Doğruluk grafiği**: Modelin eğitim ve doğrulama doğruluğu takip edilmiştir.
 
-Sonuçlar, modelin doğrulama seti üzerindeki kaybının eğitim seti ile benzer seviyelerde kaldığını ve aşırı öğrenmenin önlendiğini göstermiştir.
+### 11. Modelin Değerlendirilmesi
+#### Kayıp Fonksiyonu Görselleştirmesi
+- Eğitim kaybı ve doğrulama kaybı, her bir epoch için çizilmiş ve kayıpların gelişimi izlenmiştir.
+- Kayıp yüzdeleri, grafik üzerinde kayıp değerlerinin üzerinde belirtilmiştir; bu sayede her epoch için kayıp değeri daha net bir şekilde görülebilmektedir.
 
-### 10. Hiperparametre Optimizasyonu
+#### Doğruluk Görselleştirmesi
+- Eğitim doğruluğu ve doğrulama doğruluğu da benzer şekilde grafikleştirilmiştir.
+- Doğruluk yüzdeleri, grafik üzerinde doğruluk değerlerinin üzerinde gösterilerek her epoch için doğruluk oranları net bir şekilde sunulmuştur.
+
+#### Sonuçların Yazdırılması
+- Modelin son eğitim kaybı ve doğrulama kaybı ile son eğitim ve doğrulama doğruluk değerleri yazdırılmıştır. Bu bilgiler, modelin genel performansını özetlemekte ve değerlendirmekte yardımcı olmaktadır.
+
+### 12. Hiperparametre Optimizasyonu
 
 Hiperparametre optimizasyonu, modelin performansını artırmak için katman sayısı, nöron sayısı, öğrenme oranı ve dropout gibi parametrelerin ayarlanmasını içerir. Yapay sinir ağları (ANN) üzerinde çalışırken, bu parametrelerin doğru bir şekilde optimize edilmesi, modelin hem eğitim hem de doğrulama performansını doğrudan etkiler. Bu projede, başlangıçta kullanılan hiperparametrelerin değiştirilmesi ve bunun sonucunda elde edilen performans değerleri karşılaştırılmaktadır.
 
@@ -106,7 +123,7 @@ Yapılan bu hiperparametre değişiklikleri sonucunda modelin performansında iy
 
 Eğitim kaybındaki azalma ve doğrulama kaybındaki benzer orandaki iyileşme, modelin overfitting yapmadığını ve daha genel bir performans elde ettiğini işaret etmektedir.
 
-### 11. Sonuçlar ve Yorumlar
+### 13. Sonuçlar ve Yorumlar
 
 Model, balık türlerinin sınıflandırılmasında başarılı sonuçlar vermiştir. Ancak, sınıflar arasında dengesizlik olduğunda modelin performansı bazı sınıflarda düşük kalmıştır. Özellikle az sayıda görüntüye sahip balık türlerinde modelin hatalı tahminler yapma olasılığı daha yüksek olmuştur. Proje sonunda modelin doğrulama setindeki doğruluğu yüksek, kaybı ise düşük bir seviyede kalmış olarak sonuçlandırılmıştır.
 
