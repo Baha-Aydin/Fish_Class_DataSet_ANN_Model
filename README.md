@@ -109,3 +109,6 @@ Eğitim kaybındaki azalma ve doğrulama kaybındaki benzer orandaki iyileşme, 
 ### 11. Sonuçlar ve Yorumlar
 
 Model, balık türlerinin sınıflandırılmasında başarılı sonuçlar vermiştir. Ancak, sınıflar arasında dengesizlik olduğunda modelin performansı bazı sınıflarda düşük kalmıştır. Özellikle az sayıda görüntüye sahip balık türlerinde modelin hatalı tahminler yapma olasılığı daha yüksek olmuştur. Proje sonunda modelin doğrulama setindeki doğruluğu yüksek, kaybı ise düşük bir seviyede kalmış olarak sonuçlandırılmıştır.
+
+### Kaggle Erişim Linki
+https://www.kaggle.com/code/fehmibahaaydn/fish-classdataset-ann
