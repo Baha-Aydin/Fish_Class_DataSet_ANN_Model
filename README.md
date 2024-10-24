@@ -28,7 +28,7 @@ Bu adımda, proje için kullanılan balık görüntüleri yüklenmiş ve işlenm
 
 ### 3. Veri Temizleme ve Karıştırma
 
-Veri setinde bazı görüntülerin etiketleri "GT" ile bitmektedir. Bu görüntüler çıkarılmıştır çünkü sınıflandırma probleminde kullanılmamaktadır. Ayrıca, veri setinin rastgele karıştırılması sağlanmıştır. Bu, eğitim ve test aşamalarında veri setindeki sıralamadan kaynaklanabilecek hataları önlemeye yardımcı olunmasını sağlamaktadır.
+Veri setinde bazı görüntülerin etiketleri "GT" ile bitmektedir. Bu görüntüler sınıflandırma esnasında problem yaşanmaması için çıkarılmıştır. Ayrıca, veri setinin rastgele karıştırılması sağlanmıştır. Bu, eğitim ve test aşamalarında veri setindeki sıralamadan kaynaklanabilecek hataları önlemeye yardımcı olunmasını sağlamaktadır.
 
 ### 4. Verilerin Dağılımı ve Görselleştirme
 
